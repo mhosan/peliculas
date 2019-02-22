@@ -44,6 +44,18 @@ export class AppComponent {
     fechaTomorrow: <string> null,
     cantidadTomorrow: <string> null
   };
+  poblacionUr = {
+    fechaHoy: <string> null,
+    cantidadHoy: <string> null,
+    fechaTomorrow: <string> null,
+    cantidadTomorrow: <string> null
+  };
+  poblacionPeru = {
+    fechaHoy: <string> null,
+    cantidadHoy: <string> null,
+    fechaTomorrow: <string> null,
+    cantidadTomorrow: <string> null
+  };
   constructor(private json: JsonService){
   }
   ngOnInit(){
@@ -118,6 +130,28 @@ export class AppComponent {
     this.json.getData("http://api.population.io/1.0/population/Paraguay/today-and-tomorrow/?format=json").subscribe(respuesta => {
       console.log("Respuesta:", respuesta);
       this.poblacionPr = {
+        fechaHoy : respuesta.total_population[0].date,
+        cantidadHoy : respuesta.total_population[0].population,
+        fechaTomorrow: respuesta.total_population[1].date,
+        cantidadTomorrow: respuesta.total_population[1].population
+      };
+    });
+  }
+  poblacionUruguay(event: any){
+    this.json.getData("http://api.population.io/1.0/population/Uruguay/today-and-tomorrow/?format=json").subscribe(respuesta => {
+      console.log("Respuesta:", respuesta);
+      this.poblacionUr = {
+        fechaHoy : respuesta.total_population[0].date,
+        cantidadHoy : respuesta.total_population[0].population,
+        fechaTomorrow: respuesta.total_population[1].date,
+        cantidadTomorrow: respuesta.total_population[1].population
+      };
+    });
+  }
+  poblacionPeruana(event: any){
+    this.json.getData("http://api.population.io/1.0/population/Peru/today-and-tomorrow/?format=json").subscribe(respuesta => {
+      console.log("Respuesta:", respuesta);
+      this.poblacionPeru = {
         fechaHoy : respuesta.total_population[0].date,
         cantidadHoy : respuesta.total_population[0].population,
         fechaTomorrow: respuesta.total_population[1].date,
