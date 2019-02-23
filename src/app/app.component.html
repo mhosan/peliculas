@@ -1,102 +1,51 @@
 <div class="container">
-  <div class="row pt-2">
-    <div class="col">
-    </div>
-    <div class="col">
-        <h4>Hoy</h4>
-    </div>
-    <div class="col">
-        <h4>Mañana</h4>
-    </div>
-  </div>
-  <div class="row pt-3">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionMundial($evemt)">Población mundial</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacion.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacion.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <hr>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionArgentina($evemt)">Población Argentina</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionArg.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionArg.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionBrasil($evemt)">Población Brasil</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionBr.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionBr.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionChile($evemt)">Población Chile</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionCh.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionCh.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionBolivia($evemt)">Población Bolivia</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionBl.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionBl.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionParaguay($evemt)">Población Paraguay</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionPr.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionPr.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionUruguay($evemt)">Población Uruguay</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionUr.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionUr.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-  <div class="row py-1">
-      <div class="col">
-        <button type="button" class="btn btn-info" (click)="poblacionPeruana($evemt)">Población Perú</button>
-      </div>
-      <div class="col">
-          <h6>{{poblacionPeru.cantidadHoy}}</h6>  
-      </div>
-      <div class="col">
-          <h6>{{poblacionPeru.cantidadTomorrow}}</h6>  
-      </div>
-  </div>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Paises</th>
+                <th scope="col">Hoy</th>
+                <th scope="col">Mañana</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                  <th scope="row">Población Mundial</th>
+                  <td>{{pobMundial.cantidadHoy}}</td>
+                  <td>{{pobMundial.cantidadTomorrow}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Argentina</th>
+                  <td>{{pobArgentina.cantidadHoy}}</td>
+                  <td>{{pobArgentina.cantidadTomorrow}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Brasil</th>
+                  <td>{{pobBrasil.cantidadHoy}}</td>
+                  <td>{{pobBrasil.cantidadTomorrow}}</td>
+                </tr>
+                <tr>
+                        <th scope="row">Bolivia</th>
+                        <td>{{pobBolivia.cantidadHoy}}</td>
+                        <td>{{pobBolivia.cantidadTomorrow}}</td>
+                      </tr>
+                      <tr>
+                            <th scope="row">Paraguay</th>
+                            <td>{{pobParaguay.cantidadHoy}}</td>
+                            <td>{{pobParaguay.cantidadTomorrow}}</td>
+                          </tr>
+                          <tr>
+                                <th scope="row">Uruguay</th>
+                                <td>{{pobUruguay.cantidadHoy}}</td>
+                                <td>{{pobUruguay.cantidadTomorrow}}</td>
+                              </tr>
+                              <tr>
+                                    <th scope="row">Perú</th>
+                                    <td>{{pobPeru.cantidadHoy}}</td>
+                                    <td>{{pobPeru.cantidadTomorrow}}</td>
+                                  </tr>
+                                     
+                    </tbody>
+    </table>
 </div>
+  
+  
