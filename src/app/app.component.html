@@ -1,51 +1,49 @@
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Paises</th>
-                <th scope="col">Hoy</th>
-                <th scope="col">Mañana</th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr>
-                  <th scope="row">Población Mundial</th>
-                  <td>{{pobMundial.cantidadHoy}}</td>
-                  <td>{{pobMundial.cantidadTomorrow}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Argentina</th>
-                  <td>{{pobArgentina.cantidadHoy}}</td>
-                  <td>{{pobArgentina.cantidadTomorrow}}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Brasil</th>
-                  <td>{{pobBrasil.cantidadHoy}}</td>
-                  <td>{{pobBrasil.cantidadTomorrow}}</td>
-                </tr>
-                <tr>
-                        <th scope="row">Bolivia</th>
-                        <td>{{pobBolivia.cantidadHoy}}</td>
-                        <td>{{pobBolivia.cantidadTomorrow}}</td>
-                      </tr>
-                      <tr>
-                            <th scope="row">Paraguay</th>
-                            <td>{{pobParaguay.cantidadHoy}}</td>
-                            <td>{{pobParaguay.cantidadTomorrow}}</td>
-                          </tr>
-                          <tr>
-                                <th scope="row">Uruguay</th>
-                                <td>{{pobUruguay.cantidadHoy}}</td>
-                                <td>{{pobUruguay.cantidadTomorrow}}</td>
-                              </tr>
-                              <tr>
-                                    <th scope="row">Perú</th>
-                                    <td>{{pobPeru.cantidadHoy}}</td>
-                                    <td>{{pobPeru.cantidadTomorrow}}</td>
-                                  </tr>
-                                     
-                    </tbody>
-    </table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><h4>Paises</h4></th>
+        <th class="text-right"><h4>Hoy</h4></th>
+        <th class="text-right"><h4>Mañana</h4></th>
+      </tr>
+    </thead>
+    <tbody class="text-right">
+      <tr >
+        <th scope="row" class="text-left">Población Mundial</th>
+        <td >{{pobMundial.cantidadHoy | number: '10.0'}}</td>
+        <td >{{pobMundial.cantidadTomorrow | number: '10.0'}}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-left">Argentina</th>
+        <td>{{pobArgentina.cantidadHoy | number: '6.0'}}</td>
+        <td>{{pobArgentina.cantidadTomorrow  | number: '6.0'}}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-left">Brasil</th>
+        <td>{{pobBrasil.cantidadHoy  | number: '6.0'}}</td>
+        <td>{{pobBrasil.cantidadTomorrow  | number: '6.0'}}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-left">Bolivia</th>
+        <td>{{pobBolivia.cantidadHoy  | number: '6.0'}}</td>
+        <td>{{pobBolivia.cantidadTomorrow  | number: '6.0'}}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-left">Paraguay</th>
+        <td>{{pobParaguay.cantidadHoy  | number: '6.0'}}</td>
+        <td>{{pobParaguay.cantidadTomorrow  | number: '6.0'}}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-left">Uruguay</th>
+        <td>{{pobUruguay.cantidadHoy  | number: '6.0'}}</td>
+        <td>{{pobUruguay.cantidadTomorrow  | number: '6.0'}}</td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-left">Perú</th>
+        <td>{{pobPeru.cantidadHoy  | number: '6.0'}}</td>
+        <td>{{pobPeru.cantidadTomorrow  | number: '6.0'}}</td>
+      </tr>
+
+    </tbody>
+  </table>
 </div>
-  
-  
