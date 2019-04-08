@@ -135,6 +135,8 @@ export class AppComponent {
 
 //peliculas:
 //https://raw.githubusercontent.com/prust/wikipedia-movie-data/master/movies.json
+//otra api de peliculas, la pagina es www.omdbapi.com
+//http://www.omdbapi.com/?t=Dumbo&apikey=caa03693
 
 //musica:
 //http://www.songsterr.com/a/ra/songs.json?pattern=Beatles
