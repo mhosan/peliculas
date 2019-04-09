@@ -1,0 +1,20 @@
+<div class="row">
+<div class="col">
+  <!-- <div class="card"> -->
+    <!-- <div class="card-body"> -->
+      <h5 class="text-center">Película</h5>
+      <form (submit)="onSubmitBuscar()">
+        <div class="form-group">
+          <label for="titulo">Titulo </label>
+          <input type="text" name="titulo" #elTitulo id="titulo" [(ngModel)]="titulo" class="form-control">
+        </div>
+        <!-- <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" #laClave id="password" [(ngModel)]="password" class="form-control">
+          </div> -->
+        <input type="submit" value="Enviar" class="btn btn-primary btn-sm btn-block">
+      </form>
+    <!-- </div> -->
+  <!-- </div> -->
+</div>
+</div>

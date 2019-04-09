@@ -1,55 +1,15 @@
-<div class="container">
-  <table class="table">
-    <thead>
-      <tr>
-        <th><h4>Paises</h4></th>
-        <th class="text-right"><h4>Hoy</h4></th>
-        <th class="text-right"><h4>Mañana</h4></th>
-      </tr>
-    </thead>
-    <tbody class="text-right">
-      <tr >
-        <th scope="row" class="text-left">Población Mundial</th>
-        <td >{{pobMundial.cantidadHoy | number: '10.0'}}</td>
-        <td >{{pobMundial.cantidadTomorrow | number: '10.0'}}</td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-left">Argentina</th>
-        <td>{{pobArgentina.cantidadHoy | number: '6.0'}}</td>
-        <td>{{pobArgentina.cantidadTomorrow  | number: '6.0'}}</td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-left">Brasil</th>
-        <td>{{pobBrasil.cantidadHoy  | number: '6.0'}}</td>
-        <td>{{pobBrasil.cantidadTomorrow  | number: '6.0'}}</td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-left">Bolivia</th>
-        <td>{{pobBolivia.cantidadHoy  | number: '6.0'}}</td>
-        <td>{{pobBolivia.cantidadTomorrow  | number: '6.0'}}</td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-left">Paraguay</th>
-        <td>{{pobParaguay.cantidadHoy  | number: '6.0'}}</td>
-        <td>{{pobParaguay.cantidadTomorrow  | number: '6.0'}}</td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-left">Uruguay</th>
-        <td>{{pobUruguay.cantidadHoy  | number: '6.0'}}</td>
-        <td>{{pobUruguay.cantidadTomorrow  | number: '6.0'}}</td>
-      </tr>
-      <tr>
-        <th scope="row" class="text-left">Perú</th>
-        <td>{{pobPeru.cantidadHoy  | number: '6.0'}}</td>
-        <td>{{pobPeru.cantidadTomorrow  | number: '6.0'}}</td>
-      </tr>
+<div class="py-1">
+  <div class="container">
+    <app-encabezado></app-encabezado>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<!-- <div class="text-white container text-center pt-2 pb-1 mt-2" style="background-color:#999999; top:3px;">
+  <h5>Películas y series</h5>
+</div>
 
-    </tbody>
-  </table>
-</div>
 <div class="text-white fixed-bottom container text-center pt-1" style="background-color:#999999; bottom:3px;">
-  <h6>Datos obtenidos de la API: &nbsp;<a href="http://api.population.io/" target="_blank">http://api.population.io/</a>, 
-    &nbsp;del Laboratorio de Datos Mundial:&nbsp;<a href="https://population.io/#" target="_blank">https://population.io/#</a></h6>
-</div>
+  <h6>Datos obtenidos de la API: &nbsp;<a href="http://omdbapi.com/" target="_blank">http://omdbapi.com/</a></h6>
+</div> -->
 
 
