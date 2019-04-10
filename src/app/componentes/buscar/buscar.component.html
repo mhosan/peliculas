@@ -1,20 +1,15 @@
-<div class="row">
-<div class="col">
-  <!-- <div class="card"> -->
-    <!-- <div class="card-body"> -->
-      <h5 class="text-center">Película</h5>
-      <form (submit)="onSubmitBuscar()">
-        <div class="form-group">
-          <label for="titulo">Titulo </label>
-          <input type="text" name="titulo" #elTitulo id="titulo" [(ngModel)]="titulo" class="form-control">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-auto">
+      <nav class="navbar navbar-expand-lg navbar-dark" style='background-color: black;'>
+        <div class="collapse navbar-collapse" id='navbarSupportedContent'>
+          <!-- <ul class="navbar-nav-mr-auto"> -->
+            <input type="text" class="form-control mr-sm-2" (keyup)='onSubmitBuscar($event)'
+            placeholder='Buscar' aria-label='Search' [(ngModel)]='valorTexto'
+            style='font-size: small'>
+          <!-- </ul> -->
         </div>
-        <!-- <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" #laClave id="password" [(ngModel)]="password" class="form-control">
-          </div> -->
-        <input type="submit" value="Enviar" class="btn btn-primary btn-sm btn-block">
-      </form>
-    <!-- </div> -->
-  <!-- </div> -->
-</div>
+      </nav>
+    </div>
+  </div>
 </div>

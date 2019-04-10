@@ -1,30 +1,45 @@
+<app-buscar (eventoYaBusque)='atajarRespuesta($event)' style='position: absolute; top: 13px; right: 110px;'></app-buscar>
 <div class="container">
   <table class="table">
     <thead>
       <tr>
-        <th><h5>Buscador</h5></th>
-        <th><h5>Titulo</h5></th>
-        <th><h5>Año</h5></th>
-        <th><h5>Duración</h5></th>
-        <th><h5>Actores</h5></th>
-        <th><h5>Premios</h5></th>
-        <th><h5>Director</h5></th>
-        <th><h5>Genero</h5></th>
-        <th><h5>Lenguaje</h5></th>
+        <th>
+          <h5>Titulo</h5>
+        </th>
+        <th>
+          <h5>Año</h5>
+        </th>
+        <th>
+          <h5>Duración</h5>
+        </th>
+        <th>
+          <h5>Actores</h5>
+        </th>
+        <th>
+          <h5>Premios</h5>
+        </th>
+        <th>
+          <h5>Director</h5>
+        </th>
+        <th>
+          <h5>Genero</h5>
+        </th>
+        <th>
+          <h5>Lenguaje</h5>
+        </th>
       </tr>
     </thead>
     <tbody class="text-right">
-      <tr >
-        <!-- <th scope="row" class="text-left">Población Mundial</th> --> 
-        <td ><app-buscar (eventoYaBusque)='atajarRespuesta($event)'></app-buscar></td>
-        <td >{{laPelicula.Title}}</td>
-        <td >{{laPelicula.Released}}</td>
-        <td >{{laPelicula.Runtime}}</td>
-        <td >{{laPelicula.Actors}}</td>
-        <td >{{laPelicula.Awards}}</td>
-        <td >{{laPelicula.Director}}</td>
-        <td >{{laPelicula.Genre}}</td>
-        <td >{{laPelicula.Language}}</td>
+      <tr>
+        <!-- <th scope="row" class="text-left">Población Mundial</th> -->
+        <td></td>
+        <td>{{laPelicula.Released}}</td>
+        <td>{{laPelicula.Runtime}}</td>
+        <td>{{laPelicula.Actors}}</td>
+        <td>{{laPelicula.Awards}}</td>
+        <td>{{laPelicula.Director}}</td>
+        <td>{{laPelicula.Genre}}</td>
+        <td>{{laPelicula.Language}}</td>
       </tr>
       <tr class="mx-5">
         <img src="{{laPelicula.Poster}}" alt=''>

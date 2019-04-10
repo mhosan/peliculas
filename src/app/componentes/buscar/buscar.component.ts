@@ -8,6 +8,7 @@ import { JsonService } from 'src/app/json.service';
   styleUrls: ['./buscar.component.css']
 })
 export class BuscarComponent implements OnInit {
+  contenido: string = '';
   titulo: string = '';
   public peliculas: IPeliculas = {} as IPeliculas;
   @Output() eventoYaBusque = new EventEmitter<IPeliculas>();
@@ -17,8 +18,9 @@ export class BuscarComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmitBuscar(){
-    this.json.getPelicula(this.titulo).subscribe( respuesta => {
+  onSubmitBuscar(event: any){
+    this.contenido = event.target.value;
+    this.json.getPelicula(this.contenido).subscribe( respuesta => {
       console.log("Buscar-Respuesta:", respuesta);
       this.peliculas = {
         Title : respuesta.Title,
