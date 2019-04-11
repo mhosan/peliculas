@@ -1,4 +1,7 @@
-<app-buscar (eventoYaBusque)='atajarRespuesta($event)' style='position: absolute; top: 13px; right: 110px;'></app-buscar>
+<!-- <app-buscar (eventoYaBusque)='atajarRespuesta($event)' style='position: absolute; top: 13px; right: 110px;'></app-buscar> -->
+<app-buscar (eventoYaBusque)='atajarRespuesta($event)'
+    style='position: absolute; top: 13px; right: 250px;'>
+</app-buscar>
 <div class="container">
   <table class="table">
     <thead>
@@ -31,7 +34,6 @@
     </thead>
     <tbody class="text-right">
       <tr>
-        <!-- <th scope="row" class="text-left">Población Mundial</th> -->
         <td class='text-center'><b>{{laPelicula.Title}}</b></td>
         <td class='text-center'>{{laPelicula.Released}}</td>
         <td class='text-center'>{{laPelicula.Runtime}}</td>

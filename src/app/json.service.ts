@@ -1,27 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import 'rxjs/Rx';                             //daba error al compilar, hubo que instalar: npm install rxjs-compat
-import { Subject } from 'rxjs/Rx';
-
+import { HttpClient } from '@angular/common/http';
+//import 'rxjs/Rx';                             //daba error al compilar, hubo que instalar: npm install rxjs-compat
+import { IPeliculas } from "./IPeliculas";
+//import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class JsonService {
-  propTitulo: string = '';
-  //private aviso = new Subject<string>();
-  //aviso$ = this.aviso.asObservable();
+  private url: string = '';
+  private apiKey: string = 'caa03693';
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
-  //anunciarAlgo(elTitulo:string){
-  //  this.aviso.next(elTitulo);
-  //}
+  searchMovies(titulo: string, tipo: string){
+    this.url = `http://www.omdbapi.com/?s=${encodeURI(titulo)}&type=${tipo}&apikey=${this.apiKey}`;
+    console.log(this.url);
+    return this.http.get<IPeliculas>(this.url).pipe(map(results => results['Search']));
+  }
   
-  getPelicula(titulo: string){
-    this.propTitulo = titulo;
-    //this.aviso.next(this.propTitulo);
-    return this.http.get('http://www.omdbapi.com/?t=' + titulo + '&apikey=caa03693').map((res: Response) => res.json());
+  getPelicula(id: string){
+    return this.http.get<IPeliculas>(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=${this.apiKey}`);
   }
 
 }

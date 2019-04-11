@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IPeliculas } from 'src/app/ipeliculas';
+import { IPeliculas } from "src/app/IPeliculas";
 import { JsonService } from 'src/app/json.service';
 import { jsonpFactory } from '@angular/http/src/http_module';
 
@@ -16,6 +16,7 @@ export class MostrarComponent implements OnInit {
 
   ngOnInit() {
     this.laPelicula = {
+      imdbID: '',
       Title: '',
       Released: '',
       Runtime: '',
@@ -29,6 +30,7 @@ export class MostrarComponent implements OnInit {
   }
   atajarRespuesta(peliculas: IPeliculas) {
     this.laPelicula = {
+      imdbID: peliculas.imdbID,
       Title: peliculas.Title,
       Released: peliculas.Released,
       Runtime: peliculas.Runtime,
@@ -40,20 +42,6 @@ export class MostrarComponent implements OnInit {
       Poster: peliculas.Poster
     }
   }
-  // esperarRespuesta(){
-  //   this.json.aviso$.subscribe( tituloBuscar => {
-  //     //console.log(tituloBuscar);
-  //     this.json.getPelicula(tituloBuscar).subscribe( respuesta => {
-  //       console.log("Mostrar-Respuesta:", respuesta);
-  //       this.peliculas = {
-  //          Title : respuesta.Title,
-  //          Released : respuesta.Released,
-  //          Runtime: respuesta.Runtime,
-  //          Actors: respuesta.Actors
-  //       }
-  //     });
-  //   });
-  // }
 }
 
 //https://api.github.com/users/mhosan/repos

@@ -8,6 +8,7 @@ export interface IPeliculas {
     Genre: string;
     Language: string;
     Poster: string;
+    imdbID: string;
 }
 
 //"Title":"Dumbo",
