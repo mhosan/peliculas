@@ -1,8 +1,42 @@
 <!-- <app-buscar (eventoYaBusque)='atajarRespuesta($event)' style='position: absolute; top: 13px; right: 110px;'></app-buscar> -->
-<app-buscar (eventoYaBusque)='atajarRespuesta($event)'
-    style='position: absolute; top: 13px; right: 250px;'>
-</app-buscar>
 <div class="container">
+  <div class="row">
+    <div class="col">
+        <app-buscar (eventoYaBusque)='atajarRespuesta($event)'></app-buscar>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Title}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Released}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Runtime}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Actors}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Awards}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Director}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Genre}}</b></p>
+    </div>
+    <div class="col">
+        <p class='text-center'><b>{{laPelicula.Language}}</b></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+        <img src="{{laPelicula.Poster}}" alt=''>
+    </div>
+  </div>
+<!-- 
+
+
   <table class="table">
     <thead>
       <tr>
@@ -42,10 +76,10 @@
         <td class='text-center'>{{laPelicula.Director}}</td>
         <td class='text-center'>{{laPelicula.Genre}}</td>
         <td class='text-center'>{{laPelicula.Language}}</td>
-      </tr>
-      <tr class="mx-auto">
+      </tr> -->
+      <!-- <tr class="mx-auto">
         <img src="{{laPelicula.Poster}}" alt=''>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 </div>

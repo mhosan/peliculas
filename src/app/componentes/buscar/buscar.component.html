@@ -1,32 +1,21 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-auto">
-      <nav class="navbar navbar-expand-lg navbar-dark" style='background-color: black;'>
-        <a class="navbar-brand" href="#">Título</a>
-        <div class="collapse navbar-collapse" id='navbarSupportedContent'>
-
-          <input type="text" class="form-control mr-sm-2" [(ngModel)]="titulo" (ngModelChange)='onSubmitBuscar($event)'
-            placeholder='Buscar' aria-label='Search' style='font-size: small'>
-          <label for="tipoBuscar">Selecc. tipo</label>
-          <select name="tipoBuscar" id="tipoBuscar" [(ngModel)]='tipo' (ngModelChange)=onSubmitBuscar($event)>
-            <option selected='true' value="">Todo</option>
-            <option value="movie">Pelicula</option>
-            <option value="series">Serie</option>
-            <option value="episode">Episodio</option>
-          </select>
-        </div>
-      </nav>
-    </div>
-    <div class="row">
-      <div class="col-md-auto">
-        <ul class="list-group">
-          <button type="button" class="list-group-item list-group-item-action" *ngFor='let peli of (resultado | async)'
-            (click)='mostrarDetalle($event)'>
-            {{peli.Title}} - {{peli.imdbID}}
-          </button>
-        </ul>
-      </div>
-    </div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <!-- <h5 class="card-title">Card title</h5> -->
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <input type="text" class="form-control mr-sm-2" [(ngModel)]="titulo" (ngModelChange)='onSubmitBuscar($event)'
+      placeholder='Buscar' aria-label='Search' style='font-size: small'>
+    <label for="tipoBuscar">Selecc. tipo</label>
+    <select name="tipoBuscar" id="tipoBuscar" [(ngModel)]='tipo' (ngModelChange)=onSubmitBuscar($event)>
+      <option selected='true' value="">Todo</option>
+      <option value="movie">Pelicula</option>
+      <option value="series">Serie</option>
+      <option value="episode">Episodio</option>
+    </select>
+    <ul class="list-group">
+      <button type="button" class="list-group-item list-group-item-action" *ngFor='let peli of (resultado | async)'
+        (click)='mostrarDetalle($event)'>
+        {{peli.Title}} - {{peli.imdbID}}
+      </button>
+    </ul>
   </div>
 </div>
-<!-- (keyup)='onSubmitBuscar($event)' -->
