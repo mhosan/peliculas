@@ -1,4 +1,5 @@
 export interface IPeliculas {
+  Response: string;
     Title: string;
     Released: string;
     Runtime: string;
@@ -9,6 +10,11 @@ export interface IPeliculas {
     Language: string;
     Poster: string;
     imdbID: string;
+    imdbRating: string;
+    Country: string;
+    Production: string;
+    Website: string;
+    Writer: string;
 }
 
 //"Title":"Dumbo",

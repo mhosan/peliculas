@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { IPeliculas } from "src/app/IPeliculas";
 import { JsonService } from 'src/app/json.service';
 import { Observable } from 'rxjs';
+import { FlashMessagesService} from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-buscar',
@@ -18,24 +19,30 @@ export class BuscarComponent implements OnInit {
   public peliculas: IPeliculas = {} as IPeliculas;
   @Output() eventoYaBusque = new EventEmitter<IPeliculas>();
 
-  constructor(private json: JsonService) { }
+  constructor(private json: JsonService, private flashMensajes: FlashMessagesService) { }
 
   ngOnInit() {
   }
 
   onSubmitBuscar(): void {
     this.resultado = this.json.searchMovies(this.titulo, this.tipo);
-    console.log(this.resultado);
+    //console.log(this.resultado);
   }
 
   mostrarDetalle(event: any) {
-    const temporario = event.currentTarget.childNodes[0].data;
-    const spliteado = temporario.split('-');
+    const temporario = event.currentTarget['textContent'];
+    const spliteado = temporario.split(':');
     this.elId = spliteado[1].trim();
 
     this.json.getPelicula(this.elId).subscribe(respuesta => {
       console.log("Buscar-Respuesta:", respuesta);
+      if (respuesta.Response == 'False'){
+        console.log('hubo un error, la api rest devolvió falso');
+        window.scrollTo(0,0);
+        this.flashMensajes.show('Error, la api devolvio falso',{cssClass: 'alert-danger', timeout: 4000});
+      }
       this.peliculas = {
+        Response: respuesta.Response,
         imdbID: respuesta.imdbID,
         Title: respuesta.Title,
         Released: respuesta.Released,
@@ -45,9 +52,18 @@ export class BuscarComponent implements OnInit {
         Director: respuesta.Director,
         Genre: respuesta.Genre,
         Language: respuesta.Language,
-        Poster: respuesta.Poster
+        Poster: respuesta.Poster,
+        imdbRating: respuesta.imdbRating,
+        Country: respuesta.Country,
+        Production: respuesta.Production,
+        Website: respuesta.Website,
+        Writer: respuesta.Writer
       };
       this.eventoYaBusque.emit(this.peliculas);
+      window.scrollTo(0,0);
+    },
+    error =>{
+      console.log('hubo un error' + error);
     });
   }
   // mostrarDetalle(event: any){

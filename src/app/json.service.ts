@@ -16,7 +16,6 @@ export class JsonService {
 
   searchMovies(titulo: string, tipo: string){
     this.url = `http://www.omdbapi.com/?s=${encodeURI(titulo)}&type=${tipo}&apikey=${this.apiKey}`;
-    console.log(this.url);
     return this.http.get<IPeliculas>(this.url).pipe(map(results => results['Search']));
   }
   

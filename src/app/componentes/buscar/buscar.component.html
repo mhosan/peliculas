@@ -1,21 +1,36 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <!-- <h5 class="card-title">Card title</h5> -->
-    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-    <input type="text" class="form-control mr-sm-2" [(ngModel)]="titulo" (ngModelChange)='onSubmitBuscar($event)'
-      placeholder='Buscar' aria-label='Search' style='font-size: small'>
-    <label for="tipoBuscar">Selecc. tipo</label>
-    <select name="tipoBuscar" id="tipoBuscar" [(ngModel)]='tipo' (ngModelChange)=onSubmitBuscar($event)>
-      <option selected='true' value="">Todo</option>
-      <option value="movie">Pelicula</option>
-      <option value="series">Serie</option>
-      <option value="episode">Episodio</option>
-    </select>
-    <ul class="list-group">
-      <button type="button" class="list-group-item list-group-item-action" *ngFor='let peli of (resultado | async)'
-        (click)='mostrarDetalle($event)'>
-        {{peli.Title}} - {{peli.imdbID}}
-      </button>
-    </ul>
+<div class="row">
+  <div class="col">
+    <div class="card text-center" >
+      <div class="card-body">
+        <!-- <h5 class="card-title">Card title</h5>  style="width: 18rem;" -->
+        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+        <input type="text" class="form-control mr-sm-2" [(ngModel)]="titulo" (ngModelChange)='onSubmitBuscar($event)'
+          placeholder='Buscar' aria-label='Search' style='font-size: small'>
+
+        <label style='font-size: small' for="tipoBuscar">Seleccionar tipo</label>
+        <select style='font-size: small' class="custom-select"name="tipoBuscar" id="tipoBuscar" [(ngModel)]='tipo' (ngModelChange)=onSubmitBuscar($event)>
+          <option selected='true' value="">Todo</option>
+          <option value="movie">Pelicula</option>
+          <option value="series">Serie</option>
+          <option value="episode">Episodio</option>
+        </select>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3" style="max-width: 540px;" *ngFor='let peli of (resultado | async)' (click)='mostrarDetalle($event)'>
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="{{peli.Poster}}" class="card-img" alt="..." *ngIf="peli.Poster !='N/A'">
+      <p *ngIf="peli.Poster =='N/A'" class='p-2'><small>Imagen no disponible</small></p>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{peli.Title}}</h5>
+        <p class="card-text">{{peli.Type}} - {{peli.Year}} : </p>
+        <p class="card-text"><small>{{peli.imdbID}}</small></p>
+      </div>
+    </div>
   </div>
 </div>

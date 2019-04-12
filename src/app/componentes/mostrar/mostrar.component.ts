@@ -16,6 +16,7 @@ export class MostrarComponent implements OnInit {
 
   ngOnInit() {
     this.laPelicula = {
+      Response: '',
       imdbID: '',
       Title: '',
       Released: '',
@@ -25,11 +26,17 @@ export class MostrarComponent implements OnInit {
       Director: '',
       Genre: '',
       Language: '',
-      Poster: ''
+      Poster: '',
+      imdbRating: '',
+      Country: '',
+      Production: '',
+      Website: '',
+      Writer: ''
     };
   }
   atajarRespuesta(peliculas: IPeliculas) {
     this.laPelicula = {
+      Response: peliculas.Response,
       imdbID: peliculas.imdbID,
       Title: peliculas.Title,
       Released: peliculas.Released,
@@ -39,7 +46,12 @@ export class MostrarComponent implements OnInit {
       Director: peliculas.Director,
       Genre: peliculas.Genre,
       Language: peliculas.Language,
-      Poster: peliculas.Poster
+      Poster: peliculas.Poster,
+      imdbRating: peliculas.imdbRating,
+      Country: peliculas.Country,
+      Production: peliculas.Production,
+      Website: peliculas.Website,
+      Writer: peliculas.Writer
     }
   }
 }

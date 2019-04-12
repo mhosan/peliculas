@@ -1,85 +1,66 @@
-<!-- <app-buscar (eventoYaBusque)='atajarRespuesta($event)' style='position: absolute; top: 13px; right: 110px;'></app-buscar> -->
-<div class="container">
-  <div class="row">
-    <div class="col">
-        <app-buscar (eventoYaBusque)='atajarRespuesta($event)'></app-buscar>
+<div class="row">
+  <div class="col-md-9">
+    <div class="row">
+      <div class="col">
+        <p class='text-center'><b>Título</b></p>
+        <p class='text-center'>{{laPelicula.Title}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Fecha</b></p>
+        <p class='text-center'>{{laPelicula.Released}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Duración</b></p>
+        <p class='text-center'>{{laPelicula.Runtime}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Actores</b></p>
+        <p class='text-center'>{{laPelicula.Actors}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Premios</b></p>
+        <p class='text-center'>{{laPelicula.Awards}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Director</b></p>
+        <p class='text-center'>{{laPelicula.Director}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Genero</b></p>
+        <p class='text-center'>{{laPelicula.Genre}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Lenguaje</b></p>
+        <p class='text-center'>{{laPelicula.Language}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>IMDB</b></p>
+        <p class='text-center'>{{laPelicula.imdbRating}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Pais</b></p>
+        <p class='text-center'>{{laPelicula.Country}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Productor</b></p>
+        <p class='text-center'>{{laPelicula.Production}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Website</b></p>
+        <p class='text-center'>{{laPelicula.Website}}</p>
+      </div>
+      <div class="col">
+        <p class='text-center'><b>Escritor</b></p>
+        <p class='text-center'>{{laPelicula.Writer}}</p>
+      </div>
     </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Title}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Released}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Runtime}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Actors}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Awards}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Director}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Genre}}</b></p>
-    </div>
-    <div class="col">
-        <p class='text-center'><b>{{laPelicula.Language}}</b></p>
+    <div class="row">
+      <div class="col offset-md-4">
+        <img src="{{laPelicula.Poster}}" alt='' *ngIf='laPelicula.Poster != "N/A"'>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8 mx-auto">
-        <img src="{{laPelicula.Poster}}" alt=''>
-    </div>
+  <div class="col-md-3">
+    <app-buscar (eventoYaBusque)='atajarRespuesta($event)'></app-buscar>
   </div>
-<!-- 
-
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>
-          <h5>Titulo</h5>
-        </th>
-        <th>
-          <h5>Año</h5>
-        </th>
-        <th>
-          <h5>Duración</h5>
-        </th>
-        <th>
-          <h5>Actores</h5>
-        </th>
-        <th>
-          <h5>Premios</h5>
-        </th>
-        <th>
-          <h5>Director</h5>
-        </th>
-        <th>
-          <h5>Genero</h5>
-        </th>
-        <th>
-          <h5>Lenguaje</h5>
-        </th>
-      </tr>
-    </thead>
-    <tbody class="text-right">
-      <tr>
-        <td class='text-center'><b>{{laPelicula.Title}}</b></td>
-        <td class='text-center'>{{laPelicula.Released}}</td>
-        <td class='text-center'>{{laPelicula.Runtime}}</td>
-        <td class='text-center'>{{laPelicula.Actors}}</td>
-        <td class='text-center'>{{laPelicula.Awards}}</td>
-        <td class='text-center'>{{laPelicula.Director}}</td>
-        <td class='text-center'>{{laPelicula.Genre}}</td>
-        <td class='text-center'>{{laPelicula.Language}}</td>
-      </tr> -->
-      <!-- <tr class="mx-auto">
-        <img src="{{laPelicula.Poster}}" alt=''>
-      </tr>
-    </tbody>
-  </table> -->
 </div>
